@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Entry - My ITOL Vault</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">My ITOL Vault</a>
+            <div class="header-right">
+                <a href="new-entry.html" class="btn-new-entry">New Entry</a>
+                <a href="vault.html" class="profile-icon">&#128100;</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="editor-container">
+
+            <!-- JS will write today's date into this element -->
+            <p class="editor-date" id="editorDate"></p>
+
+            <input
+                type="text"
+                id="entryTitle"
+                class="editor-title-input"
+                placeholder="Untitled Reflection"
+            >
+
+            <div class="editor-tags-area">
+                <span class="editor-tag-pill">&#128309; Thoughtful</span>
+                <button class="editor-add-tag-btn">+ Add Tag</button>
+            </div>
+
+            <textarea
+                id="entryBody"
+                class="editor-textarea"
+                placeholder="Begin your reflection..."
+            ></textarea>
+
+            <div class="editor-bottom-bar">
+                <div class="editor-bottom-left">
+                    <button class="editor-icon-btn">&#128190; Insert Memory</button>
+                    <button class="editor-icon-btn">&#128274; Private</button>
+                </div>
+                <div class="editor-bottom-right">
+                    <button class="btn-discard" id="discardBtn">Discard</button>
+                    <button class="btn-save" id="saveBtn">Save Entry</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 My ITOL Vault. Designed for reflection.</p>
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="vault.html">Archive</a>
+        </div>
+    </footer>
+
+    <script src="new-entry.js"></script>
+
+</body>
+</html>
