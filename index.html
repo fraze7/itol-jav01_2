@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My ITOL Vault</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+            <span class="logo">My ITOL Vault</span>
+            <div class="header-right">
+                <a href="new-entry.html" class="btn-new-entry">New Entry</a>
+                <a href="vault.html" class="profile-icon">&#128100;</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <div class="hero">
+            <h1>Daily Reflections</h1>
+            <p class="hero-subtitle">A sanctuary for your thoughts. Captured in the quiet moments between the noise of the world.</p>
+        </div>
+
+        <!--
+            Milestone 1: 5 hard-coded cards to test CSS spacing.
+            Milestone 4: index.js will clear these out and replace them
+            with real entries from localStorage.
+        -->
+        <div class="cards-grid" id="cardsGrid">
+
+            <div class="card card-featured">
+                <p class="card-date">March 24, 2026</p>
+                <h2 class="card-title">The silence of the early morning is where the best ideas are born.</h2>
+                <p class="card-body">I woke up at 5:00 AM today. There is a specific kind of stillness that exists before the city wakes up. It feels like the world is holding its breath. I spent an hour just watching the light change from a deep indigo to a soft, hazy gold...</p>
+            </div>
+
+            <div class="card">
+                <p class="card-date">December 25, 2025</p>
+                <h2 class="card-title">Rethinking the project architecture.</h2>
+                <p class="card-body">Spent the afternoon sketching out new user flows. Simplification is harder than complexity.</p>
+                <div class="card-tags">
+                    <span class="tag">Work</span>
+                    <span class="tag">Ideas</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <p class="card-date">August 21, 2025</p>
+                <h2 class="card-title">The rain in the city.</h2>
+                <p class="card-body">The way the neon lights reflect on the wet pavement tonight is mesmerizing.</p>
+                <div class="card-tags">
+                    <span class="tag">Poetry</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <p class="card-date">August 23, 2025</p>
+                <h2 class="card-title">Notes on intentionality and the digital space.</h2>
+                <p class="card-body">Why do we feel the need to document everything? Perhaps it's an anchor against the fleeting nature of time. If we don't write it down, did it really happen in the way we remember? Memory is a fluid thing, reshaped by our current emotions...</p>
+            </div>
+
+            <div class="card">
+                <p class="card-date">July 4, 2025</p>
+                <h2 class="card-title">A walk through the old quarter.</h2>
+                <p class="card-body">Found a small bookshop tucked away between a bakery and a florist. Spent two hours in there and left with five books I didn't plan on buying...</p>
+            </div>
+
+            <div class="card card-cta">
+                <div class="cta-icon">&#128221;</div>
+                <h3>Feeling inspired?</h3>
+                <p>Your vellum is waiting for its next entry.</p>
+                <a href="new-entry.html" class="cta-link">Start writing now</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 My ITOL Vault. Designed for reflection.</p>
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="vault.html">Archive</a>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
