@@ -1,8 +1,8 @@
 // Milestone 5: The Full Vault
 
-var vaultEntries = document.querySelector('#vaultEntries');
+const vaultEntries = document.querySelector('#vaultEntries');
 
-var savedData = localStorage.getItem('entries');
+const savedData = localStorage.getItem('entries');
 
 // If nothing is saved, show an empty state message
 if (savedData === null) {
@@ -14,7 +14,7 @@ if (savedData === null) {
 
 } else {
     // Parse the JSON string back into an array
-    var entriesArray = JSON.parse(savedData);
+    const entriesArray = JSON.parse(savedData);
 
     // Show an empty state if the array has nothing in it
     if (entriesArray.length === 0) {
@@ -25,24 +25,23 @@ if (savedData === null) {
             + '</div>';
 
     } else {
-        var newestFirst = entriesArray.slice().reverse();
+        const newestFirst = entriesArray.slice().reverse();
         // Loop through every entry
-        for (var i = 0; i < newestFirst.length; i++) {
-            var entry = newestFirst[i];
+        for (let i = 0; i < newestFirst.length; i++) {
+            const entry = newestFirst[i];
 
-            var bodyPreview = entry.body.substring(0, 200);
-            if (entry.body.length > 200) {
-                bodyPreview = bodyPreview + '...';
-            }
+            const bodyPreview = entry.body.length > 200 ? entry.body.substring(0, 200) + '...' : entry.body;
 
-            var entryHTML = '<div class="vault-entry">';
-            entryHTML += '<button class="vault-entry-options">&#8943;</button>';
-            entryHTML += '<div class="vault-entry-meta">';
-            entryHTML += '<span class="vault-entry-date">' + entry.date + '</span>';
-            entryHTML += '</div>';
-            entryHTML += '<h2 class="vault-entry-title">' + entry.title + '</h2>';
-            entryHTML += '<p class="vault-entry-body">' + bodyPreview + '</p>';
-            entryHTML += '</div>';
+            const entryHTML = `
+                <div class="vault-entry">
+                    <button class="vault-entry-options">&#8943;</button>
+                    <div class="vault-entry-meta">
+                        <span class="vault-entry-date">${entry.date}</span>
+                    </div>
+                    <h2 class="vault-entry-title">${entry.title}</h2>
+                    <p class="vault-entry-body">${bodyPreview}</p>
+                </div>
+            `;
 
             vaultEntries.innerHTML += entryHTML;
         }

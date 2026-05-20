@@ -1,24 +1,24 @@
 // Milestone 2: Capturing Input
 // Milestone 3: Saving to LocalStorage
 
-var dateElement = document.querySelector('#editorDate');
+const dateElement = document.querySelector('#editorDate');
 
-var today = new Date();
-var dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-var formattedDate = today.toLocaleDateString('en-US', dateOptions);
+const today = new Date();
+const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const formattedDate = today.toLocaleDateString('en-US', dateOptions);
 
 dateElement.textContent = formattedDate.toUpperCase();
 
 // Milestone 2: Select the form elements using document.querySelector
-var titleInput = document.querySelector('#entryTitle');
-var bodyInput = document.querySelector('#entryBody');
-var saveBtn = document.querySelector('#saveBtn');
-var discardBtn = document.querySelector('#discardBtn');
+const titleInput = document.querySelector('#entryTitle');
+const bodyInput = document.querySelector('#entryBody');
+const saveBtn = document.querySelector('#saveBtn');
+const discardBtn = document.querySelector('#discardBtn');
 
 saveBtn.addEventListener('click', function() {
 
-    var titleValue = titleInput.value;
-    var bodyValue = bodyInput.value;
+    let titleValue = titleInput.value;
+    const bodyValue = bodyInput.value;
 
     // Don't save if both fields are empty
     if (titleValue.trim() === '' && bodyValue.trim() === '') {
@@ -31,16 +31,16 @@ saveBtn.addEventListener('click', function() {
     }
 
     // Build the entry object
-    var newEntry = {
+    const newEntry = {
         id: Date.now(),
         title: titleValue,
         body: bodyValue,
         date: formattedDate.toUpperCase()
     };
 
-    // Milestone 3: 
-    var existingData = localStorage.getItem('entries');
-    var entriesArray = [];
+    // Milestone 3:
+    const existingData = localStorage.getItem('entries');
+    let entriesArray = [];
 
     if (existingData !== null) {
         entriesArray = JSON.parse(existingData);
@@ -56,7 +56,7 @@ saveBtn.addEventListener('click', function() {
 
 // Discard button goes back without saving
 discardBtn.addEventListener('click', function() {
-    var confirmed = confirm('Are you sure you want to discard this entry?');
+    const confirmed = confirm('Are you sure you want to discard this entry?');
     if (confirmed) {
         window.location.href = 'index.html';
     }
